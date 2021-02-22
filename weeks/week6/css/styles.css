@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+form{
+    max-width: 580px;
+    margin: 20px auto;
+}
+
+fieldset{
+    padding: 10px;
+}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.err{
+    display: block;
+    color: #f00;
+    font-style: italic;
+}
+
+form ul {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+input, select, textarea {
+    margin-bottom: 10px;
+}
