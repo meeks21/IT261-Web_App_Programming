@@ -14,7 +14,7 @@
 <body class="<?php echo $body;?> <?php echo $background; ?>">
     <diV class="wrapper">
         <header>
-            <h1>PHP</h1>
+            <h1><a href="https://www.kemar-meeks.com/IT261/index.php">PHP</a></h1>
         </header>
         <nav class="top_nav">
             <?php

@@ -12,3 +12,22 @@ label{
     margin-bottom: 10px;
 }
 
+.err{
+    display: block;
+    color: red;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+form ul{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+input, select {
+    margin-bottom: 10px;
+}
+input[type="checkbox"],
+input[type="radio"]{
+    margin-right: 5px;
+}

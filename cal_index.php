@@ -25,14 +25,14 @@
             <img class="bannerImage" src="images/techbanner2.jpg" alt="banner image">
         </div>
         <main>
-            <h3>About </h3>
-            <p>Hello,</p>
-            <br>
-            <p>My name is Kemar and I an aspiring front-end web developer based in Seattle, WA. Currently I am in my 5th quarter at Seattle Central, and I have really enjoy learning about all the different front-end technologies that are out there. JavaScript has been the most fun an interesting for me, and in my career iI plan to focus heavily on JavaScript and JS frameworks. When I'm not coding I enjoy watching movies, making music, and cooking.</p>
-            <h3>MAMP Screenshot</h3>
-            <img class="mainImages" src="images/MAMP_screenshot2.PNG" alt="MAMP Screenshot">
-            <h3>Error Screenshot</h3>
-            <img class="mainImages" src="images/Error_screenshot2.PNG" alt="MAMP Screenshot">
+            <h3>Calculater </h3>
+            <ul>
+            <li><a href="calculator.php">calculator.php</a></li>
+            <li><a href="calculator-days.php">calculator-days.php</a></li>
+            <li><a href="calculator-days-errors.php">calculator-days-errors.php</a></li>
+            <li><a href="calculator-days-errors-sticky.php">calculator-days-errors-sticky.php</a></li>
+            </ul>   
+            
         </main>
         <aside>
             <img class="myImage" src="images/myImage.jpg" alt="myImage">
