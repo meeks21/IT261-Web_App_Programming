@@ -1,0 +1,10 @@
+content file
+
+Our contents:
+config.php ---  call out the credentials.php
+credentials.php
+people.php
+people-view.php
+
+Website
+credentials.php

@@ -84,8 +84,8 @@
             </ul>
             <h5>Week 7 </h5>
             <ul class="assignment_list">
-                <li><a href="weeks/week7/random.php">form1.php</a></li>
-                <li><a href="weeks/week7/substr.php">form2.php</a></li>              
+                <li><a href="weeks/week7/random.php">random.php</a></li>
+                <li><a href="weeks/week7/substr.php">substr.php</a></li>              
             </ul>
             </div>
             

@@ -118,11 +118,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
     function myGenres() {
+        
         $myreturn = '';
         // if my genre array is not empty, implode it
         if(!empty($_POST['genre'])){
             $myReturn = implode(', ', $_POST['genre']); 
         } return $myReturn;
+
     }
 
     if(isset($_POST['name'],
@@ -132,7 +134,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_POST['numDays'],
             $_POST['agree'])) {
 
-                $to = 'anthony.meeks3@gmail.com';
+                $to = 'oszemeo@mystudentswa.com';
                 $subject = 'Emailable Form Test Email '.date('m/d/y');
                 $body = 'Name: '.$name.''.PHP_EOL.
                 'Email: '.$email.''.PHP_EOL.
