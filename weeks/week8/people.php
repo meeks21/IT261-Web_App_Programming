@@ -20,11 +20,9 @@ die(myError(__FILE__,__LINE__,mysqli_error($iConn)));
         //this array is going to display the contents of your row
         echo '<ul>';
         echo '<li>For more information <a href="people-view.php?id='.$row['week8PeopleID'].'">'.$row['firstName'].'</a></li>';
-        echo '<li><b>First Name</b>'.$row['firstName'].'</li>';
-        echo '<li><b>Last Name</b>'.$row['lastName'].'</li>';
-        echo '<li><b>Occupation</b>'.$row['occupation'].'</li>';
-
-
+        echo '<li><b>First Name</b> '.$row['firstName'].'</li>';
+        echo '<li><b>Last Name</b> '.$row['lastName'].'</li>';
+        echo '<li><b>Occupation</b> '.$row['occupation'].'</li>';
         echo '</ul>';
 
     } //end while loop
