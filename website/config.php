@@ -134,7 +134,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_POST['numDays'],
             $_POST['agree'])) {
 
-                $to = 'oszemeo@mystudentswa.com';
+                $to = 'szemeo@mystudentswa.com';
                 $subject = 'Emailable Form Test Email '.date('m/d/y');
                 $body = 'Name: '.$name.''.PHP_EOL.
                 'Email: '.$email.''.PHP_EOL.
