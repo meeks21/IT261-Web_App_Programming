@@ -1,84 +1,161 @@
-<?php
-    ob_start();
-    define('DEBUG', 'TRUE');
-    
-    include('credentials.php');
+<?php //config.php file
 
+// this will be our config file that we will link to the credentials.php
+ob_start(); //prevents header errors before reading the whole page!
+define('DEBUG', 'TRUE'); // We want to see our errors
 
+include('credentials.php');
 
-    define('THIS_PAGE', basename($_SERVER['PHP_SELF']));
+/**********************************************************
+ *      Switch for nav bar and page configuration
+ * 
+ *********************************************************/
+
+define('THIS_PAGE', basename($_SERVER['PHP_SELF']));
 
     $nav['index.php'] = 'Home';
     $nav['about.php'] = 'About';
     $nav['daily.php'] = 'Daily';
-    $nav['ramen.php'] = 'Ramen';
+    $nav['countries.php'] = 'Countries';
     $nav['contact.php'] = 'Contact';
-    $nav['gallery.php'] = 'Gallery';
+    
 
 switch(THIS_PAGE) {
 
     case 'index.php':
-    $title = 'Website Project Home Page';
-    $body = 'home';
-    $banner = '../images/techbanner2.jpg';
+    $title = 'Home Page';
     break;
 
     case 'daily.php':
-    $title = 'Daily Entree';
-    $body = 'daily';
-    $banner = '../images/bistro-banner.jpg';
+    $title = 'Daily Page'; 
     break;
 
-    case 'ramen.php':
+    case 'about.php':
+    $title = 'About Page';
+    break;
+
+    case 'countries.php':
+    $title = 'Countries Page';
+    break;
+
+    case 'countries-view.php':
     $title = 'Delicious Ramen';
-    $body = 'home';
-    $banner = '../images/ramenbanner2.jpg';
-    break;
-
-    case 'ramen-view.php':
-        $title = 'Delicious Ramen';
-        $body = 'home';
-        $banner = '../images/ramenviewbanner2.jpg';
     break;
  
     
     case 'contact.php':
     $title = 'Emailable Form';
-    $body = 'home';
-    $banner = '../images/email_banner.jpg';
     break; 
     
     case 'thx.php':
     $title = 'Thank You!';
-    $body = 'home';
-    $banner = '../images/email_banner.jpg';
     break; 
 
     default:
-    $body = 'home';
     $title = 'Our Website';
-    $banner = '../images/techbanner2.jpg';
+
 
 }
+/*****************************************************************
+ *      Switch for daily page
+ * 
+ ****************************************************************/
+date_default_timezone_set('America/Los_Angeles');
+$todayDate = date('H:i A');
 
+if(isset($_GET['today'])){
+    $today = $_GET['today'];
+} else {
+    $today = date('l');
+}
 
-//Form Config for contact.php
+switch($today){
 
-// creating empty variables
+    case 'Monday':
+        
+        $pic = 'images/munich.jpg';
+        $alt = 'munich';
+        $city = 'Munich';
+        $content = '';
+        
+    break;
+
+    case 'Tuesday':
+        
+        $pic = 'images/bangkok.jpg';
+        $alt = 'bangkok';
+        $city = 'Bangkok';
+        $content = '';
+        
+    break;
+
+    case 'Wednesday':
+        
+        $pic = 'images/prague.jpg';
+        $alt = 'prague';
+        $city = 'Prague';
+        $content = '';
+        
+    break;
+
+    case 'Thursday':
+        
+        $pic = 'images/puerto-vallarta.jpg';
+        $alt = 'puerto-vallarta';
+        $city = 'Puerto Vallarta';
+        $content = '';
+        
+    break;
+
+    case 'Friday':
+        
+        $pic = 'images/montreal.jpg';
+        $alt = 'montreal';
+        $city = 'Montreal';
+        $content = '';
+        
+    break;
+
+    case 'Saturday':
+        
+        $pic = 'images/auckland.jpg';
+        $alt = 'auckland';
+        $city = 'Auckland';
+        $content = '';
+        
+    break;
+
+    case 'Sunday':
+        
+        $pic = 'images/buenos-aires.jpg';
+        $alt = 'buenos-aires';
+        $city = 'Buenos Aires';
+        $content = '';
+        
+    break;
+
+}
+/*****************************************************************
+                         form.php config
+
+******************************************************************/
+
+//declaring variables
 $name='';
 $email='';
 $phone='';
-$genre='';
+$travel='';
 $numDays='';
 $agree='';
 
 $nameErr='';
 $emailErr='';
 $phoneErr='';
-$genreErr='';
+$travelErr='';
 $numDaysErr='';
 $agreeErr='';
 
+// error messgaes
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     if(empty($_POST['name'])){
@@ -99,10 +176,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $phone = $_POST['phone'];
     }
 
-    if(empty($_POST['genre'])){
-        $genreErr = 'Please select at least one genre';
+    if(empty($_POST['travel'])){
+        $travelErr = 'Please select at least one destination';
     }else {
-        $genre = $_POST['genre'];
+        $travel = $_POST['travel'];
     }
 
     if($_POST['numDays'] == 'NULL'){
@@ -134,12 +211,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 
-    function myGenres() {
+    function myTravel() {
         
         $myreturn = '';
-        // if my genre array is not empty, implode it
-        if(!empty($_POST['genre'])){
-            $myReturn = implode(', ', $_POST['genre']); 
+        // if my travel array is not empty, implode it
+        if(!empty($_POST['travel'])){
+            $myReturn = implode(', ', $_POST['travel']); 
         } return $myReturn;
 
     }
@@ -147,20 +224,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(isset($_POST['name'],
             $_POST['email'],
             $_POST['phone'],
-            $_POST['genre'],
+            $_POST['travel'],
             $_POST['numDays'],
             $_POST['agree'])) {
 
                 $to = 'szemeo@mystudentswa.com';
-                $subject = 'Emailable Form Test Email '.date('m/d/y');
+                $subject = 'Final Project | Thank You Olga!!! '.date('m/d/y');
                 $body = 'Name: '.$name.''.PHP_EOL.
                 'Email: '.$email.''.PHP_EOL.
                 'Phone: '.$phone.''.PHP_EOL.
 
-                ''.$name.' interested in learning: '.myGenres().''.PHP_EOL.
-                //use the function myGenres to return the items in the array
+                ''.$name.' is interested in visiting the following: '.myTravel().''.PHP_EOL.
+                //use the function myTravel to return the items in the array
 
-                'Number days '.$name.' can take lessons: '.$numDays.''.PHP_EOL.
+                'Length of '.$name.' stay in each country : '.$numDays.''.PHP_EOL.
                 'A representative will contact you shortly';
 
 
@@ -177,7 +254,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $_POST['email'] !== '' &&
                 $_POST['phone'] !== '' &&
                 preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])&&
-                $_POST['genre'] !== '' &&
+                $_POST['travel'] !== '' &&
                 $_POST['numDays'] !== 'NULL' &&
                 $_POST['agree'] !== '') {
                
@@ -194,6 +271,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 //This code snippet needs to be at teh bottom of the page
 function myError($myFile, $myLine, $errorMsg)

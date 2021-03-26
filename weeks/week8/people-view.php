@@ -41,7 +41,8 @@ if(mysqli_num_rows($result) > 0) {
 
 ?>
 
-
+<div id="wrapper" style="width:940px; margin:0 auto;">
+<main style="width:580px; float:left;">
 <h1>WE have made it - here we are!</h1>
 <h2>You are on <?php echo $firstName;?>'s Page</h2>
 <?php
@@ -62,8 +63,19 @@ if(mysqli_num_rows($result) > 0) {
         echo $feedback;
     }
 
-    //dont forget you are in the html land!
+            ?>
+            </main>
 
+            <aside style="width:340px; float:right;">
+            <?php
+                if($feedback == '') {
+                    echo '<img src="images/people'.$id.'.jpg" alt="'.$firstName.'">';
+                }
+            
+            ?>
+            </aside>
+
+    <?php
      // releaseing the web server
  mysqli_free_result($result);
 
@@ -72,3 +84,4 @@ if(mysqli_num_rows($result) > 0) {
 ?>
 
 <!-- dont forget you are in html land -->
+</div>      

@@ -19,7 +19,7 @@
             <a href="website/daily.php">Daily</a>
             <a href="cal_index.php">Calculator</a>
             <a href="website/contact.php">Contact</a>
-            <a href="#">gallery</a>
+            <a href="website/gallery.php">gallery</a>
         </nav>
         <div class="banner">
             <img class="bannerImage" src="images/techbanner2.jpg" alt="banner image">
@@ -86,6 +86,11 @@
             <ul class="assignment_list">
                 <li><a href="weeks/week7/random.php">random.php</a></li>
                 <li><a href="weeks/week7/substr.php">substr.php</a></li>              
+            </ul>
+            <h5>Week 8 </h5>
+            <ul class="assignment_list">
+                <li><a href="weeks/week8/people.php">people.php</a></li>
+                <li><a href="weeks/week8/people-view.php">people-view.php</a></li>              
             </ul>
             </div>
             
